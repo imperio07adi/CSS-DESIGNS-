@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Homemade+Apple&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Moon+Dance&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap');
+
+body {
+    background: linear-gradient(-45deg, #062989, #5e0bab, #c37c03, #069263);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.heroname {
+    font-family: Rock Salt;
+    font-size: 70px;
+}
+
+@keyframes slide {
+    0% {
+        left: 0%;
+    }
+
+    50% {
+        left: 95%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+.animate-slide {
+    animation: slide 4s ease-in-out infinite;
+    top: -0.75rem;
+}
+
+
+.contact-form {
+    /* background: #ffffff; */
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    max-width: 600px;
+    margin: 60px auto;
+}
+
+.contact-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1e1e2f;
+}
+
+.contact-form p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #666;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 0.1px solid #ddd;
+    border-radius: 8px;
+    /* background: #fafafa; */
+    font-size: 16px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    /* Indigo Accent */
+    background: #fff;
+}
+
+.contact-form button {
+    background: #6366f1;
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #4f46e5;
+}

@@ -1,0 +1,242 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000;
+    /* Dark background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+footer {
+    position: absolute;
+    top: 30px; 
+    left: 30px; 
+    font-size: 16px; 
+    color: #f5b209; 
+}
+
+footer a {
+    text-decoration: none; 
+    color: #f5e901; 
+}
+
+footer a:hover {
+    color: #ff9e02; 
+}
+
+/* Ceiling and Light Setup */
+.ceiling {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    height: 100%;
+    z-index: 2;
+}
+
+.string {
+    width: 2px;
+    height: 250px;
+    /* Long string */
+    background: #666;
+}
+
+.bulb-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 0px;
+}
+
+.bulb {
+    width: 130px;
+    height: 140px;
+    background: radial-gradient(circle at 20% 60%, #474747, #000000);
+    border-radius: 70% 70% 0% 0%;
+    position: relative;
+    box-shadow: none;
+    transition: all 0.7s ease;
+}
+
+.filament {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #fffdfd;
+    border-radius: 50%;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.filament2 {
+    width: 22px;
+    height: 22px;
+    /* border: 2px solid #817504; */
+    border-radius: 70% 70% 20% 20%;
+    background: radial-gradient(circle at 20% 60%, #383838, #000000);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -280%);
+}
+
+.filament3 {
+    width: 140px;
+    z-index: 3;
+    height: 22px;
+    /* border: 2px solid #817504; */
+    border-radius: 70% 70% 20% 20%;
+    background: radial-gradient(circle at 20% 80%, #2c2b2b, #000000);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 420%);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .bulb {
+        width: 100px;
+        height: 110px;
+    }
+
+    .filament {
+        width: 18px;
+        height: 18px;
+    }
+
+    .filament2 {
+        width: 18px;
+        height: 18px;
+        transform: translate(-50%, -270%);
+    }
+
+    .filament3 {
+        width: 120px;
+        height: 18px;
+        transform: translate(-50%, 400%);
+    }
+}
+
+@media (max-width: 480px) {
+    .bulb {
+        width: 80px;
+        height: 90px;
+    }
+
+    .filament {
+        width: 16px;
+        height: 16px;
+    }
+
+    .filament2 {
+        width: 16px;
+        height: 16px;
+        transform: translate(-50%, -260%);
+    }
+
+    .filament3 {
+        width: 90px;
+        height: 16px;
+        transform: translate(-50%, 370%);
+    }
+}
+
+/* Light ON flash effect */
+.light-on .bulb {
+    background: radial-gradient(circle at 30% 30%, #fffacd, #ffeb3b);
+    box-shadow:
+        0 0 600px 30px #ffeb3b,
+        0 0 100px 60px #fff176;
+    animation: flash 0.7s ease forwards;
+}
+
+.light-on .filament {
+    border-color: #ffa500;
+}
+
+/* Flash Animation */
+@keyframes flash {
+    0% {
+        box-shadow: 0 0 200px 5px #ffeb3b;
+    }
+
+    50% {
+        box-shadow: 0 0 300px 50px #ffeb3b;
+    }
+
+    100% {
+        box-shadow: 0 0 150px 30px #ffeb3b;
+    }
+}
+
+/* Pull String */
+.pull-string {
+    width: 2px;
+    height: 120px;
+    z-index: 1;
+    background: #5f5e5e;
+    position: relative;
+    transition: transform 0.3s ease;
+    transform-origin: top center;
+    /* important for wave */
+}
+
+.pull-string::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #ffaf01;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Pulled and Wavy Animation */
+.pulled {
+    animation: pull-bounce-wave 1s ease;
+}
+
+/* Keyframes for Pull, Bounce and Wave */
+@keyframes pull-bounce-wave {
+    0% {
+        transform: translateY(0) rotate(0deg) scaleY(1);
+    }
+
+    20% {
+        transform: translateY(30px) rotate(5deg) scaleY(1.25);
+    }
+
+    40% {
+        transform: translateY(10px) rotate(-4deg) scaleY(0.5);
+    }
+
+    60% {
+        transform: translateY(20px) rotate(-5deg) scaleY(1.18);
+    }
+
+    80% {
+        transform: translateY(5px) rotate(-2deg) scaleY(0.7);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg) scaleY(1);
+    }
+}
