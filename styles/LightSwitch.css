@@ -84,28 +84,24 @@ footer a:hover {
 .filament2 {
     width: 22px;
     height: 22px;
-
     border-radius: 50% 50% 0 0 ;
     background-color: #272626;
     position: relative;
-    top: -22%;
-    left: 50%;
+    top: -32%;
+    left: 7%;
     transform: translate(-50%, -50%);
-
 }
 
 .filament3 {
     width: 145px;
     height: 22px;
-
     z-index: 2;
     border-radius: 50% 50% 0 0;
     background-color: #272626;
     position: relative;
-    top: 72%;
+    top: -17%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 /* Mobile Responsiveness */
@@ -128,6 +124,7 @@ footer a:hover {
     .filament3 {
         width: 120px;
         height: 18px;
+        
     }
 }
 
@@ -145,11 +142,15 @@ footer a:hover {
     .filament2 {
         width: 16px;
         height: 16px;
+        top: -27%;
+        left: 7%;
     }
 
     .filament3 {
         width: 110px;
         height: 16px;
+        top: -16%;
+        left: 50%;
     }
 }
 
