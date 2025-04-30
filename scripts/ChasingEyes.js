@@ -1,42 +1,56 @@
-document.querySelector("body").addEventListener("mousemove", eyeball);
-
-function eyeball(event) {
+function eyeball(x, y) {
   const eyes = document.querySelectorAll(".eyes");
   eyes.forEach(function (eye) {
-    const eyeRect = eye.getBoundingClientRect();
-    const eyeCenterX = eyeRect.left + eyeRect.width / 2;
-    const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+    const rect = eye.getBoundingClientRect();
+    const eyeCenterX = rect.left + rect.width / 2;
+    const eyeCenterY = rect.top + rect.height / 2;
 
-    const radian = Math.atan2(event.pageY - eyeCenterY, event.pageX - eyeCenterX);
+    const radian = Math.atan2(y - eyeCenterY, x - eyeCenterX);
     const rotate = radian * (180 / Math.PI) + 180;
 
     eye.style.transform = `rotate(${rotate}deg)`;
   });
 }
 
-// Create the glowing cursor
-const glowCursor = document.createElement("div");
-glowCursor.classList.add("cursor-glow");
-document.body.appendChild(glowCursor);
+// For mouse movement
+document.addEventListener("mousemove", function (event) {
+  eyeball(event.clientX, event.clientY);
+});
 
-// Move it with the mouse
-document.addEventListener("mousemove", (e) => {
-  glowCursor.style.left = `${e.clientX}px`;
-  glowCursor.style.top = `${e.clientY}px`;
+// For touch movement
+document.addEventListener("touchmove", function (event) {
+  if (event.touches.length > 0) {
+    const touch = event.touches[0];
+    eyeball(touch.clientX, touch.clientY);
+  }
 });
 
 
-document.addEventListener("mousemove", function (e) {
+
+function createTrail(x, y) {
   const dot = document.createElement("div");
   dot.classList.add("cursor-dot");
-  dot.style.left = `${e.clientX}px`;
-  dot.style.top = `${e.clientY}px`;
+  dot.style.left = `${x}px`;
+  dot.style.top = `${y}px`;
   document.body.appendChild(dot);
 
-  // Remove the dot after animation ends
   setTimeout(() => {
     dot.remove();
-  }, 500); // Match this to animation duration
+  }, 500); // Match with animation
+}
+
+// Desktop mouse movement
+document.addEventListener("mousemove", function (e) {
+  createTrail(e.clientX, e.clientY);
 });
+
+// Mobile finger movement
+document.addEventListener("touchmove", function (e) {
+  if (e.touches.length > 0) {
+    const touch = e.touches[0];
+    createTrail(touch.clientX, touch.clientY);
+  }
+});
+
 
 

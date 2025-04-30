@@ -147,13 +147,13 @@ footer a:hover {
     .filament2 {
         width: 16px;
         height: 16px;
-        transform: translate(-50%, -260%);
+        transform: translate(-50%, -635%);
     }
 
     .filament3 {
         width: 90px;
         height: 16px;
-        transform: translate(-50%, 370%);
+        transform: translate(-50%);
     }
 }
 
