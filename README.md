@@ -1,4 +1,4 @@
-# 🎨 Creative CSS Designs
+# 🎨 StyleCraft
 
 Welcome to **Creative CSS Designs** — a curated collection of experimental, creative user interface components built entirely with **HTML** and **CSS**. No JavaScript required (unless for interactivity), just pure style, structure, and imagination.
 
@@ -34,11 +34,15 @@ This website is a **playground for CSS lovers and UI tinkerers**. It showcases a
 
 ## 📁 Folder Structure
 
-creative-css-designs/ ├── index.html ├── about.html ├── contact.html ├── assets/ │ ├── images/ │ ├── styles/ │ └── scripts/ └── README.md
-
-yaml
-Copy
-Edit
+creative-css-designs/ 
+├── index.html 
+├── about.html 
+├── contact.html 
+├── assets/ │ 
+├── images/ │ 
+├── styles/ │ 
+└── scripts/ 
+└── README.md
 
 ---
 
